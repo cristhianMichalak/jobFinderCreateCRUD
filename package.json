@@ -1,0 +1,38 @@
+{
+  "name": "jobfindcreatecrud",
+  "version": "1.0.0",
+  "description": "CRUD made with express and node to create a CRUD",
+  "main": "src/app.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cristhianMichalak/jobFinderCreateCRUD.git"
+  },
+  "keywords": [
+    "CRUD",
+    "Node.js",
+    "Express.js",
+    "Express",
+    "Fullstacks",
+    "Back-end",
+    "Front-end"
+  ],
+  "author": "Cristhian Michalak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cristhianMichalak/jobFinderCreateCRUD/issues"
+  },
+  "homepage": "https://github.com/cristhianMichalak/jobFinderCreateCRUD#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "sequelize": "^6.37.8",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^6.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
