@@ -1,3 +1,6 @@
 .env
 /src/db/app.db
 node_modules/
+.postman/
+postman/
+

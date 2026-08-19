@@ -1,5 +1,6 @@
 import express from "express";
-import db from "./db/connections.js"
+import db from "./db/connection.js"
+import applicationsRoutes from "./routes/applications.js"
 //const express
 const app = express();
 
@@ -7,8 +8,11 @@ app.use(express.json());
 
 //defining the first route to the server
 app.get("/", (req, res) => {
-  res.json({ message: `App running` });
+  res.json({ message: `Its working` });
 });
+
+//jobs routes
+app.use('/applications', applicationsRoutes) 
 
 //db connection
 async function connectDb() {
@@ -20,5 +24,9 @@ async function connectDb() {
         process.exit(1)
     }
 }
-export default app;
+
+
+
 connectDb()
+export default app;
+
