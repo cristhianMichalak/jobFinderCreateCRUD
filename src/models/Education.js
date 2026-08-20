@@ -1,28 +1,32 @@
 import Sequelize from "sequelize";
 import db from "../db/connection.js";
+import sequelize from "../db/connection.js";
 
-const Course = db.define(`courses`, {
-  course_id: {
+const Education = db.define(`education`, {
+  education_id: {
     type: Sequelize.INTEGER,
   },
   user_id: {
     type: Sequelize.INTEGER,
   },
-  title: {
-    type: Sequelize.STRING,
-  },
-  desciption: {
-    type: Sequelize.STRING
+  current_student: {
+    type: Sequelize.INTEGER,
   },
   institution: {
     type: Sequelize.STRING,
   },
-  completion_date: {
+  course: {
     type: Sequelize.STRING,
   },
-  certificate_url: {
+  degree: {
     type: Sequelize.STRING,
-  }
+  },
+  start_date: {
+    type: Sequelize.STRING,
+  },
+  end_date: {
+    type: Sequelize.STRING,
+  },
 });
 
-export default Course
+export default Education

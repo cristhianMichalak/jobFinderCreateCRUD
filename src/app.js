@@ -1,6 +1,10 @@
 import express from "express";
 import db from "./db/connection.js"
 import applicationsRoutes from "./routes/applications.js"
+import coursesRoutes from "./routes/courses.js"
+import educationRoutes from "./routes/education.js"
+import experiencesRoutes from "./routes/experiences.js"
+import jobsRoutes from "./routes/jobs.js"
 //const express
 const app = express();
 
@@ -13,6 +17,18 @@ app.get("/", (req, res) => {
 
 //jobs routes
 app.use('/applications', applicationsRoutes) 
+
+//courses routes
+app.use('/courses', coursesRoutes)
+
+//Education routes
+app.use(`/education`, educationRoutes)
+
+//experiences routes
+app.use(`/experiences`, experiencesRoutes)
+
+//jobs routes
+app.use(`/jobs`, jobsRoutes)
 
 //db connection
 async function connectDb() {

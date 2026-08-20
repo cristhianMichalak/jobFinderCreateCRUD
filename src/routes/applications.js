@@ -1,34 +1,27 @@
-import express from "Express";
-import Sequelize from "sequelize";
+import express from "express";
 import Application from "../models/Application.js";
 
 const router = express.Router();
 
-router.get('/test', (req, res) => {
-    res.json( { message: `thats it`})
-})
+router.get(`/testApplications`, (req, res) => {
+  res.json({ message: `Applications route working` });
+});
 
-//add Application via post
-
-router.post("./add", (req, res) => {
-  const { applcation_id, user_id, job_id, status, created_at, updated_at } =
-    req.body;
-
-  //insert data
-
-  Application.create({
-    applcation_id,
-    user_id,
-    job_id,
-    status,
-    created_at,
-    updated_at,
-  });
+// add application via POST
+router.post(`/add`, async (req, res) => {
   try {
-    res.redirect("/");
+    const { user_id, job_id, status } = req.body;
+    //insert
+    await Application.create({
+      user_id,
+      job_id,
+      status,
+    });
+
+    res.redirect(`/`);
   } catch (err) {
-    console.error(err);
+    res.json({ message: error });
   }
 });
 
-export default router
+export default router;
