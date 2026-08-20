@@ -5,6 +5,10 @@ import coursesRoutes from "./routes/courses.js"
 import educationRoutes from "./routes/education.js"
 import experiencesRoutes from "./routes/experiences.js"
 import jobsRoutes from "./routes/jobs.js"
+import resumesRouter from "./routes/resumes.js"
+import skillsRouter from "./routes/skills.js"
+import userCandidateRouter from "./routes/user_candidates.js"
+import userCompanyRouter from "./routes/user_companies.js"
 //const express
 const app = express();
 
@@ -29,6 +33,18 @@ app.use(`/experiences`, experiencesRoutes)
 
 //jobs routes
 app.use(`/jobs`, jobsRoutes)
+
+//resumes router
+app.use(`/resumes`, resumesRouter)
+
+//skills router
+app.use(`/skills`, skillsRouter)
+
+//userCandidates router
+app.use(`/user_candidates`, userCandidateRouter)
+
+//userCompanies.js router
+app.use(`/user_companies`, userCompanyRouter)
 
 //db connection
 async function connectDb() {

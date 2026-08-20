@@ -12,7 +12,6 @@ router.post(`/add`, async (req, res) => {
   try {
     const {
       job_id,
-      new_role,
       amount_role,
       company_id,
       level_role,
@@ -22,13 +21,10 @@ router.post(`/add`, async (req, res) => {
       location,
       field,
       budget,
-      created_at,
-      updated_at,
     } = req.body;
     //insert data
-    Job.create({
+    await Job.create({
       job_id,
-      new_role,
       amount_role,
       company_id,
       level_role,
@@ -38,8 +34,6 @@ router.post(`/add`, async (req, res) => {
       location,
       field,
       budget,
-      created_at,
-      updated_at,
     });
     res.redirect(`/`);
   } catch (err) {

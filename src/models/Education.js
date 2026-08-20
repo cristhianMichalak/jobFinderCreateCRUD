@@ -1,6 +1,5 @@
 import Sequelize from "sequelize";
 import db from "../db/connection.js";
-import sequelize from "../db/connection.js";
 
 const Education = db.define(`education`, {
   education_id: {
@@ -29,4 +28,4 @@ const Education = db.define(`education`, {
   },
 });
 
-export default Education
+export default Education;

@@ -1,25 +1,19 @@
 import Sequelize from "sequelize";
 import db from "../db/connection.js";
 
-const Resume = db.define(`resumes`, {
-  resume_id: {
+const Skill = db.define(`skills`, {
+  skill_id: {
     type: Sequelize.INTEGER,
   },
   user_id: {
     type: Sequelize.INTEGER,
   },
-  file_url: {
+  level: {
     type: Sequelize.STRING,
   },
-  file_name: {
-    type: Sequelize.STRING,
-  },
-  created_at: {
-    type: Sequelize.STRING,
-  },
-  updated_at: {
+  title: {
     type: Sequelize.STRING,
   },
 });
 
-export default Resume;
+export default Skill;

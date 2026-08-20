@@ -1,38 +1,41 @@
 import Sequelize from "sequelize";
 import db from "../db/connection.js";
 
-const Job = db.define(`jobs`, {
-  job_id: {
+const UserCandidate = db.define(`user_candidates`, {
+  user_id: {
     type: Sequelize.INTEGER,
   },
-  new_role: {
-    type: Sequelize.INTEGER,
-  },
-  amount_role: {
-    type: Sequelize.INTEGER,
-  },
-  company_id: {
-    type: Sequelize.INTEGER,
-  },
-  level_role: {
+  name: {
     type: Sequelize.STRING,
   },
-  title: {
+  surname: {
     type: Sequelize.STRING,
   },
-  description: {
+  email: {
     type: Sequelize.STRING,
   },
-  benefits: {
+  password: {
     type: Sequelize.STRING,
   },
-  location: {
+  cpf: {
     type: Sequelize.STRING,
   },
-  field: {
+  ssn: {
     type: Sequelize.STRING,
   },
-  budget: {
+  address: {
+    type: Sequelize.STRING,
+  },
+  city: {
+    type: Sequelize.STRING,
+  },
+  state: {
+    type: Sequelize.STRING,
+  },
+  country: {
+    type: Sequelize.STRING,
+  },
+  postal_code: {
     type: Sequelize.STRING,
   },
   created_at: {
@@ -43,4 +46,4 @@ const Job = db.define(`jobs`, {
   },
 });
 
-export default Job;
+export default UserCandidate;

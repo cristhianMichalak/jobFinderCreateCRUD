@@ -11,8 +11,8 @@ const Course = db.define(`courses`, {
   title: {
     type: Sequelize.STRING,
   },
-  desciption: {
-    type: Sequelize.STRING
+  description: {
+    type: Sequelize.STRING,
   },
   institution: {
     type: Sequelize.STRING,
@@ -22,7 +22,7 @@ const Course = db.define(`courses`, {
   },
   certificate_url: {
     type: Sequelize.STRING,
-  }
+  },
 });
 
-export default Course
+export default Course;
