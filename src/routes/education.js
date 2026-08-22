@@ -11,8 +11,6 @@ router.get(`/testEducation`, (req, res) => {
 router.post(`/add`, async (req, res) => {
   try {
     const {
-      user_id,
-      current_student,
       institution,
       course,
       degree,
@@ -20,10 +18,11 @@ router.post(`/add`, async (req, res) => {
       end_date,
     } = req.body;
 
+    const user_id = req.user.id; // Assuming you have authentication middleware that sets req.user
+
     //insert
     await Education.create({
       user_id,
-      current_student,
       institution,
       course,
       degree,

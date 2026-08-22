@@ -4,7 +4,7 @@ import Resume from "../models/Resume.js";
 const router = express.Router();
 
 router.get(`/testResumes`, (req, res) => {
-  res.json({ mesesage: `resumes route working` });
+  res.json({ message: `resumes route working` });
 });
 
 router.post(`/add`, async (req, res) => {

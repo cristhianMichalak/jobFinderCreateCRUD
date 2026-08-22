@@ -13,6 +13,7 @@ import userCompanyRouter from "./routes/user_companies.js"
 const app = express();
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }))
 
 //defining the first route to the server
 app.get("/", (req, res) => {

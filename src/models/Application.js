@@ -4,22 +4,34 @@ import db from "../db/connection.js";
 const Application = db.define("applications", {
   application_id: {
     type: Sequelize.INTEGER,
+    primaryKey: true,
+    autoIncrement: true,
   },
   user_id: {
     type: Sequelize.INTEGER,
+    allowNull: false,
+    references: {
+      model: "users_candidates",
+      key: "user_id",
+    },
   },
   job_id: {
     type: Sequelize.INTEGER,
+    allowNull: false,
+    references: {
+      model: "jobs",
+      key: "job_id",
+    },
   },
-  status: {
-    type: Sequelize.STRING,
+},
+{
+  uniqueKeys: {
+    unique_application: {
+      fields: ["user_id", "job_id"],
+    },
   },
-  created_at: {
-    type: Sequelize.STRING,
-  },
-  updated_at: {
-    type: Sequelize.STRING,
-  },
+  timestamps: true,
+  underscored: true,
 });
 
 export default Application;

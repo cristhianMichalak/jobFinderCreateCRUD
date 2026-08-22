@@ -11,7 +11,6 @@ router.get(`/testCourses`, (req, res) => {
 router.post(`/add`, async (req, res) => {
   try {
     const {
-      user_id,
       title,
       description,
       institution,
@@ -19,7 +18,9 @@ router.post(`/add`, async (req, res) => {
       certificate_url,
     } = req.body;
 
-    //insert
+    const user_id = req.user.id; // Assuming you have authentication middleware that sets req.user
+
+    //insert data into taable
     await Course.create({
       user_id,
       title,
