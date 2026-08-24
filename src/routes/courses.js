@@ -7,7 +7,7 @@ router.get(`/testCourses`, (req, res) => {
   res.json({ message: `Courses route working` });
 });
 
-// add application via POST
+// add course via POST
 router.post(`/add`, async (req, res) => {
   try {
     const {
@@ -18,7 +18,7 @@ router.post(`/add`, async (req, res) => {
       certificate_url,
     } = req.body;
 
-    const user_id = req.user.id; // Assuming you have authentication middleware that sets req.user
+    const user_id = req.user.id;
 
     //insert data into taable
     await Course.create({
@@ -31,6 +31,7 @@ router.post(`/add`, async (req, res) => {
     });
 
     res.redirect(`/`);
+    res.status(201).json({ message: `Course added successfully` });
   } catch (err) {
     res.json({ message: err });
   }

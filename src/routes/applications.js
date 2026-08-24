@@ -10,17 +10,17 @@ router.get(`/testApplications`, (req, res) => {
 // add application via POST
 router.post(`/add`, async (req, res) => {
   try {
-    const {job_id} = req.body;
+    const { job_id } = req.body;
 
-    const user_id = req.user.id; // Assuming you have authentication middleware that sets req.user
+    const user_id = req.user.id; 
     //insert into table
     await Application.create({
       user_id,
       job_id,
     });
 
-    res.redirect(`/`);
     res.status(201).json({ message: `Application added successfully` });
+    res.redirect(`/`);
   } catch (err) {
     res.json({ message: err });
   }

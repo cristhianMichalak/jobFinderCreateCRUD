@@ -7,7 +7,7 @@ router.get(`/testEducation`, (req, res) => {
   res.json({ message: `Education route working` });
 });
 
-// add application via POST
+// add education via POST
 router.post(`/add`, async (req, res) => {
   try {
     const {
@@ -18,7 +18,7 @@ router.post(`/add`, async (req, res) => {
       end_date,
     } = req.body;
 
-    const user_id = req.user.id; // Assuming you have authentication middleware that sets req.user
+    const user_id = req.user.id; 
 
     //insert
     await Education.create({
@@ -31,6 +31,7 @@ router.post(`/add`, async (req, res) => {
     });
 
     res.redirect(`/`);
+    res.status(201).json({ message: `Education added successfully` });
   } catch (err) {
     res.json({ message: err });
   }

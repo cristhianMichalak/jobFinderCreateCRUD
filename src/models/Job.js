@@ -1,46 +1,59 @@
 import Sequelize from "sequelize";
 import db from "../db/connection.js";
 
-const Job = db.define(`jobs`, {
-  job_id: {
-    type: Sequelize.INTEGER,
+const Job = db.define(
+  `jobs`,
+  {
+    job_id: {
+      type: Sequelize.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+    },
+    amount_role: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+    },
+    company_id: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      references: {
+        model: "user_companies",
+        key: "company_id",
+      },
+    },
+    level_role: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+    title: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+    description: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+    benefits: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+    location: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+    field: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+    budget: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
   },
-  new_role: {
-    type: Sequelize.INTEGER,
+  {
+    timestamps: true,
+    underscored: true,
   },
-  amount_role: {
-    type: Sequelize.INTEGER,
-  },
-  company_id: {
-    type: Sequelize.INTEGER,
-  },
-  level_role: {
-    type: Sequelize.STRING,
-  },
-  title: {
-    type: Sequelize.STRING,
-  },
-  description: {
-    type: Sequelize.STRING,
-  },
-  benefits: {
-    type: Sequelize.STRING,
-  },
-  location: {
-    type: Sequelize.STRING,
-  },
-  field: {
-    type: Sequelize.STRING,
-  },
-  budget: {
-    type: Sequelize.STRING,
-  },
-  created_at: {
-    type: Sequelize.STRING,
-  },
-  updated_at: {
-    type: Sequelize.STRING,
-  },
-});
+);
 
 export default Job;

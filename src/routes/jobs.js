@@ -11,9 +11,7 @@ router.get("/testJobs", (req, res) => {
 router.post(`/add`, async (req, res) => {
   try {
     const {
-      job_id,
       amount_role,
-      company_id,
       level_role,
       title,
       description,
@@ -22,9 +20,10 @@ router.post(`/add`, async (req, res) => {
       field,
       budget,
     } = req.body;
+
+    const company_id = req.company_id;
     //insert data
     await Job.create({
-      job_id,
       amount_role,
       company_id,
       level_role,
@@ -36,6 +35,7 @@ router.post(`/add`, async (req, res) => {
       budget,
     });
     res.redirect(`/`);
+    res.status(201).json({ message: `Job added successfully` });
   } catch (err) {
     res.json({ message: err });
   }
