@@ -9,11 +9,12 @@ router.get(`/testSkills`, (req, res) => {
 
 router.post(`/add`, async (req, res) => {
   try {
-    const { user_id, level, title } = req.body;
+    const { level, title } = req.body;
+    const user_id = 2
 
     await Skill.create({ user_id, level, title });
 
-    res.redirect(`/`);
+    res.status(201).json({ message: `Skills added successfully` });
   } catch (err) {
     res.json({ message: err });
   }

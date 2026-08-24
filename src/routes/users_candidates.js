@@ -37,7 +37,7 @@ router.post(`/add`, async (req, res) => {
       postal_code,
     });
 
-    res.redirect(`/`);
+    res.status(201).json({ message: `User added successfully` });
   } catch (err) {
     res.json({ message: err });
   }

@@ -35,7 +35,7 @@ router.post(`/add`, async (req, res) => {
       country,
     });
 
-    res.redirect(`/`);
+    res.status(201).json( { message: "Company added with success"})
   } catch (err) {
     res.json({ message: err });
   }

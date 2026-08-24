@@ -36,6 +36,9 @@ const Course = db.define(`courses`, {
     allowNull: false,
     unique: true,
   },
+},
+{
+  timestamps: false,
 });
 
 export default Course;

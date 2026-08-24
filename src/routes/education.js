@@ -10,15 +10,9 @@ router.get(`/testEducation`, (req, res) => {
 // add education via POST
 router.post(`/add`, async (req, res) => {
   try {
-    const {
-      institution,
-      course,
-      degree,
-      start_date,
-      end_date,
-    } = req.body;
+    const { institution, course, degree, start_date, end_date } = req.body;
 
-    const user_id = req.user.id; 
+    const user_id = 2
 
     //insert
     await Education.create({
@@ -29,12 +23,10 @@ router.post(`/add`, async (req, res) => {
       start_date,
       end_date,
     });
-
-    res.redirect(`/`);
-    res.status(201).json({ message: `Education added successfully` });
+    res.status(201).json({ message: `Course added successfully` });
   } catch (err) {
     res.json({ message: err });
   }
 });
 
-export default router
+export default router;

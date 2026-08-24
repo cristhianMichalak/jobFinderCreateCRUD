@@ -33,6 +33,10 @@ const Job = db.define(
       type: Sequelize.STRING,
       allowNull: false,
     },
+    requirements: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
     benefits: {
       type: Sequelize.STRING,
       allowNull: false,

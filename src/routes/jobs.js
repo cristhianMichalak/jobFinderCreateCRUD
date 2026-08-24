@@ -15,13 +15,14 @@ router.post(`/add`, async (req, res) => {
       level_role,
       title,
       description,
+      requirements,
       benefits,
       location,
       field,
       budget,
     } = req.body;
 
-    const company_id = req.company_id;
+    const company_id = 2
     //insert data
     await Job.create({
       amount_role,
@@ -29,12 +30,12 @@ router.post(`/add`, async (req, res) => {
       level_role,
       title,
       description,
+      requirements,
       benefits,
       location,
       field,
       budget,
     });
-    res.redirect(`/`);
     res.status(201).json({ message: `Job added successfully` });
   } catch (err) {
     res.json({ message: err });

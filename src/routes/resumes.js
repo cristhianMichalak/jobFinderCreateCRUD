@@ -10,15 +10,13 @@ router.get(`/testResumes`, (req, res) => {
 router.post(`/add`, async (req, res) => {
   try {
     const { file_url, file_name } = req.body;
-    const user_id = req.user_id;
+    const user_id = 2;
 
     await Resume.create({
       user_id,
       file_url,
       file_name,
     });
-
-    res.redirect(`/`);
     res.status(201).json({ message: `Resume added successfully` });
   } catch (err) {
     res.json({ message: err });

@@ -12,7 +12,7 @@ router.post(`/add`, async (req, res) => {
   try {
     const { company, position, description, start_date, end_date } = req.body;
 
-    const user_id = req.user_id;
+    const user_id = 2;
     //insert data
     await Experience.create({
       user_id,
@@ -22,8 +22,6 @@ router.post(`/add`, async (req, res) => {
       start_date,
       end_date,
     });
-
-    res.redirect(`/`);
     res.status(201).json({ message: `Experience added successfully` });
   } catch (err) {
     res.json({ message: err });

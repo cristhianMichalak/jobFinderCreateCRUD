@@ -35,6 +35,9 @@ const Education = db.define(`education`, {
     type: Sequelize.DATE,
     allowNull: false,
   },
+},
+{
+  timestamps: false
 });
 
 export default Education;

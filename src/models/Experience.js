@@ -34,6 +34,9 @@ const Experience = db.define(`experiences`, {
   end_date: {
     type: Sequelize.DATE,
   },
+},
+{
+  timestamps: false
 });
 
 export default Experience;

@@ -18,7 +18,7 @@ router.post(`/add`, async (req, res) => {
       certificate_url,
     } = req.body;
 
-    const user_id = req.user.id;
+    const user_id = 2;
 
     //insert data into taable
     await Course.create({
@@ -29,8 +29,6 @@ router.post(`/add`, async (req, res) => {
       completion_date,
       certificate_url,
     });
-
-    res.redirect(`/`);
     res.status(201).json({ message: `Course added successfully` });
   } catch (err) {
     res.json({ message: err });

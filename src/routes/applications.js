@@ -12,7 +12,7 @@ router.post(`/add`, async (req, res) => {
   try {
     const { job_id } = req.body;
 
-    const user_id = req.user.id; 
+    const user_id = 2
     //insert into table
     await Application.create({
       user_id,
@@ -20,7 +20,6 @@ router.post(`/add`, async (req, res) => {
     });
 
     res.status(201).json({ message: `Application added successfully` });
-    res.redirect(`/`);
   } catch (err) {
     res.json({ message: err });
   }
