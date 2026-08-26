@@ -10,7 +10,7 @@ router.get(`/testSkills`, (req, res) => {
 router.post(`/add`, async (req, res) => {
   try {
     const { level, title } = req.body;
-    const user_id = 2
+    const user_id = req.user_id;
 
     await Skill.create({ user_id, level, title });
 

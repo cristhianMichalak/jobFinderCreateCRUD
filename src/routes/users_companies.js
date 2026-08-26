@@ -13,29 +13,27 @@ router.post(`/add`, async (req, res) => {
       name,
       email,
       password,
-      cnpj,
-      ein,
       phone,
       address,
       city,
       state,
       country,
+      postal_code
     } = req.body;
 
     await UserCompany.create({
       name,
       email,
       password,
-      cnpj,
-      ein,
       phone,
       address,
       city,
       state,
       country,
+      postal_code
     });
 
-    res.status(201).json( { message: "Company added with success"})
+    res.status(201).json({ message: "Company added with success" });
   } catch (err) {
     res.json({ message: err });
   }

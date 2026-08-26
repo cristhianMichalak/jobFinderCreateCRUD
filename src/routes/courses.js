@@ -18,7 +18,7 @@ router.post(`/add`, async (req, res) => {
       certificate_url,
     } = req.body;
 
-    const user_id = 2;
+    const user_id = req.user_id;
 
     //insert data into taable
     await Course.create({

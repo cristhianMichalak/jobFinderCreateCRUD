@@ -12,7 +12,7 @@ router.post(`/add`, async (req, res) => {
   try {
     const { company, position, description, start_date, end_date } = req.body;
 
-    const user_id = 2;
+    const user_id = req.user_id;
     //insert data
     await Experience.create({
       user_id,

@@ -22,7 +22,7 @@ router.post(`/add`, async (req, res) => {
       budget,
     } = req.body;
 
-    const company_id = 2
+    const company_id = req.company_id;
     //insert data
     await Job.create({
       amount_role,

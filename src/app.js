@@ -9,11 +9,15 @@ import resumesRouter from "./routes/resumes.js"
 import skillsRouter from "./routes/skills.js"
 import userCandidateRouter from "./routes/users_candidates.js"
 import userCompanyRouter from "./routes/users_companies.js"
+
 //const express
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
+
+//acessing static pages
+app.use(express.static('public'));
 
 //defining the first route to the server
 app.get("/", (req, res) => {

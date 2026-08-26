@@ -12,7 +12,7 @@ router.post(`/add`, async (req, res) => {
   try {
     const { job_id } = req.body;
 
-    const user_id = 2
+    const user_id = req.user_id; 
     //insert into table
     await Application.create({
       user_id,

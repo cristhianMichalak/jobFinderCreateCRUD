@@ -14,8 +14,6 @@ router.post(`/add`, async (req, res) => {
       surname,
       email,
       password,
-      cpf,
-      ssn,
       address,
       city,
       state,
@@ -28,8 +26,6 @@ router.post(`/add`, async (req, res) => {
       surname,
       email,
       password,
-      cpf,
-      ssn,
       address,
       city,
       state,
@@ -37,7 +33,7 @@ router.post(`/add`, async (req, res) => {
       postal_code,
     });
 
-    res.status(201).json({ message: `User added successfully` });
+    res.redirect("/pages/viewJobs.html");
   } catch (err) {
     res.json({ message: err });
   }
