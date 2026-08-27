@@ -33,9 +33,9 @@ router.post(`/add`, async (req, res) => {
       postal_code,
     });
 
-    res.redirect("/pages/viewJobs.html");
+    res.status(201).redirect(`/pages/viewJobs.html`)
   } catch (err) {
-    res.json({ message: err });
+    res.status(409)
   }
 });
 
