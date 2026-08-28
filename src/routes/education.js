@@ -1,32 +1,11 @@
 import express from "express";
-import Education from "../models/Education.js";
+import educationController from "../controllers/educationController.js";
 
 const router = express.Router();
 
-router.get(`/testEducation`, (req, res) => {
-  res.json({ message: `Education route working` });
-});
+
 
 // add education via POST
-router.post(`/add`, async (req, res) => {
-  try {
-    const { institution, course, degree, start_date, end_date } = req.body;
-
-    const user_id = req.user_id;
-
-    //insert
-    await Education.create({
-      user_id,
-      institution,
-      course,
-      degree,
-      start_date,
-      end_date,
-    });
-    res.status(201).json({ message: `Course added successfully` });
-  } catch (err) {
-    res.json({ message: err });
-  }
-});
+router.post(`/add`, educationController)
 
 export default router;

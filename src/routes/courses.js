@@ -1,38 +1,9 @@
 import express from "express";
-import Course from "../models/Course.js";
+import courseController from "../controllers/courseController.js";
 
 const router = express.Router();
 
-router.get(`/testCourses`, (req, res) => {
-  res.json({ message: `Courses route working` });
-});
-
 // add course via POST
-router.post(`/add`, async (req, res) => {
-  try {
-    const {
-      title,
-      description,
-      institution,
-      completion_date,
-      certificate_url,
-    } = req.body;
-
-    const user_id = req.user_id;
-
-    //insert data into taable
-    await Course.create({
-      user_id,
-      title,
-      description,
-      institution,
-      completion_date,
-      certificate_url,
-    });
-    res.status(201).json({ message: `Course added successfully` });
-  } catch (err) {
-    res.json({ message: err });
-  }
-});
+router.post(`/add`, courseController);
 
 export default router;
