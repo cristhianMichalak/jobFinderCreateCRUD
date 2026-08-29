@@ -9,6 +9,7 @@ const Resume = db.define(`resumes`, {
   },
   user_id: {
     type: Sequelize.INTEGER,
+    unique: true,
     references: {
       model: "users",
       key: "user_id",
@@ -17,10 +18,7 @@ const Resume = db.define(`resumes`, {
   file_url: {
     type: Sequelize.STRING,
     unique: true,
-  },
-  file_name: {
-    type: Sequelize.STRING,
-  },
+  }
 },
 {
   timestamps: true,

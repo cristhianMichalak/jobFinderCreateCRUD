@@ -4,7 +4,7 @@ const educationController = async (req, res) => {
   try {
     const { institution, course, degree, start_date, end_date } = req.body;
 
-    const user_id = 19;
+    const user_id = req.user_id;
 
     await Education.create({
       user_id,
