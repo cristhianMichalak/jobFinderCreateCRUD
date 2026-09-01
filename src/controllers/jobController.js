@@ -29,9 +29,9 @@ const jobController = async (req, res) => {
       budget,
     });
 
-    res.status(201);
+    res.send(201);
   } catch (err) {
-    res.status(500).json({ message: err });
+    res.send(500).json({ message: err });
   }
 };
 

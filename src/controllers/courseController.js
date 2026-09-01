@@ -10,7 +10,7 @@ const courseController = async (req, res) => {
       certificate_url,
     } = req.body;
 
-    const user_id = req.user_id
+    const user_id = req.user_id;
 
     await Course.create({
       user_id,
@@ -21,10 +21,10 @@ const courseController = async (req, res) => {
       certificate_url,
     });
 
-    res.status(201);
+    res.send(201);
   } catch (err) {
-    res.status(500).json({ message: err });
+    res.send(500).json({ message: err });
   }
 };
 
-export default courseController
+export default courseController;

@@ -14,7 +14,6 @@ const userCandidateController = async (req, res) => {
       postal_code,
     } = req.body;
 
-    //insert data
     await UserCandidate.create({
       name,
       surname,
@@ -27,13 +26,13 @@ const userCandidateController = async (req, res) => {
       postal_code,
     });
 
-    res.status(201).redirect(`/pages/candidatePage.html`)
+    res.send(201).redirect(`/pages/candidatePage.html`);
   } catch (err) {
-    if (err.name = `SequelizeUniqueConstraintError`) {
-        res.status(409)
+    if (err.name === `SequelizeUniqueConstraintError`) {
+      res.send(409);
     }
-    res.status(500)
+    res.send(500);
   }
 };
 
-export default userCandidateController
+export default userCandidateController;

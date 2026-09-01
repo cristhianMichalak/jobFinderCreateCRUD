@@ -15,9 +15,9 @@ const educationController = async (req, res) => {
       end_date,
     });
 
-    res.status(201);
+    res.send(201);
   } catch (err) {
-    res.status(500);
+    res.send(500);
   }
 };
 

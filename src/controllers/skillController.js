@@ -4,7 +4,7 @@ const skillController = async (req, res) => {
   try {
     const { level, title } = req.body;
 
-    const user_id = req.user_id
+    const user_id = req.user_id;
 
     await Skill.create({
       user_id,
@@ -12,12 +12,12 @@ const skillController = async (req, res) => {
       title,
     });
 
-    res.status(201);
+    res.send(201);
   } catch (err) {
-    if ((err.name = `SequelizeUniqueConstraintError`)) {
-      res.status(409);
+    if (err.name === `SequelizeUniqueConstraintError`) {
+      res.send(409);
     }
-    res.status(500);
+    res.send(500);
   }
 };
 

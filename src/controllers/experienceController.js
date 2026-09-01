@@ -2,7 +2,7 @@ import Experience from "../models/Experience.js";
 
 const experienceController = async (req, res) => {
   try {
-    const {company, position, description, start_date, end_date} = req.body;
+    const { company, position, description, start_date, end_date } = req.body;
 
     const user_id = req.user_id;
 
@@ -13,11 +13,11 @@ const experienceController = async (req, res) => {
       description,
       start_date,
       end_date,
-  });
+    });
 
-    res.status(201);
+    res.send(201);
   } catch (err) {
-    res.json( {message: err});
+    res.send({ message: err });
   }
 };
 

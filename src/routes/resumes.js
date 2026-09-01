@@ -3,10 +3,7 @@ import resumeController from "../controllers/resumeController.js";
 
 const router = express.Router();
 
-router.get(`/testResumes`, (req, res) => {
-  res.json({ message: `resumes route working` });
-});
-
+//add resume via post
 router.post(`/add`, resumeController)
 
 export default router;
