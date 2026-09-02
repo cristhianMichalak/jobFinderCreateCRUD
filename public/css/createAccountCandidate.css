@@ -1,3 +1,11 @@
+body {
+  font-family: Helvetica, sans-serif;
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+}
+
 #cutScreen {
   width: 100vw;
   height: 100vh;
@@ -12,7 +20,7 @@
   align-content: center;
   justify-items: center;
   border-right: solid;
-  border-color: rgb(209, 209, 209);
+  border-color: white;
 }
 
 #rightSide {
@@ -29,12 +37,12 @@
 }
 
 #textDiv {
-    align-items: center;
-    justify-items: center;
+  align-items: center;
+  justify-items: center;
 }
 
 h1 {
-    display: flex;
+  display: flex;
 }
 
 #form {
@@ -74,3 +82,40 @@ h1 {
   border-radius: 5rem;
   font-weight: bold;
 }
+
+#passwordDiv {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#passwordDiv input {
+  width: 100%;
+  padding-right: 2.5rem;
+  box-sizing: border-box;
+}
+
+#passwordDiv #iconSpan {
+  position: absolute;
+  right: 0.75rem;
+  cursor: pointer;
+  color: #6b7280;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Mensagem de erro pequena e colada abaixo do input */
+#errorPEmail {
+  color: #dc2626;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin: 0.25rem 0 0 0.25rem;
+  padding: 0;
+  background: none;
+  border: none;
+}
+

@@ -5,17 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Account</title>
     <link rel="stylesheet" href="../css/createAccountCandidate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <style>
-        body {
-            font-family: Helvetica, sans-serif;
-            height: 100vh;
-            width: 100vw;
-            padding: 0;
-            margin: 0;
-        }
-    </style>
 
     <div id="cutScreen">
 
@@ -26,31 +18,61 @@
         </div>
 
         <div id="rightSide">
+
             <div id="formDiv">
+
                 <div id="textDiv">
+
                     <h1 id="mainText">Create Candidate Account</h1>
+
                 </div>
+
                 <form action="/users_candidates/add" method="post" id="form">
 
                     <input type="text" name="name" placeholder="Name" class="twoColumns" required>
                     <input type="text" name="surname" placeholder="Surname" class="twoColumns" required>
 
-                    <input type="text" name="email" placeholder="Email" class="twoColumns" required>
-                    <input type="password" name="password" placeholder="Password" class="twoColumns" required>
+    
+                    <div class="twoColumns inputGroup">
+                        <input type="text" name="email" placeholder="Email" required>
+                        <p id="errorPEmail" hidden>Email já cadastrado</p>
+                    </div>
+
+                    <div class="twoColumns" id="passwordDiv">
+                        <input type="password" id="passwordInput" name="password" placeholder="Password" required>
+                        <span id="iconSpan">
+                            <i id="eyeSlashIcon" class="fa fa-eye-slash" aria-hidden="true"></i>
+                            <i id="eyeIcon" class="fa fa-eye" aria-hidden="true" style="display: none;"></i>
+                        </span>
+                    </div>
 
                     <input type="text" name="address" placeholder="Address" class="twoColumns" required>
                     <input type="text" name="city" placeholder="City" class="twoColumns" required>
 
-                    <input type="text" name="state" placeholder="State" class="threeColumns" required>
                     <input type="text" name="country" placeholder="Country" class="threeColumns" required>
                     <input type="text" name="postal_code" placeholder="Postal Code" class="threeColumns" required>
+                    <input type="text" name="state" placeholder="State" class="threeColumns" required>
 
                     <button type="submit" id="submitButton">Sign Up</button>
                 </form>
+
+
             </div>
+
+            <div id="linksDiv">
+
+                <span id="linkSpan">
+
+
+                </span>
+
+            </div>
+
         </div>
 
-    </div> 
+    </div>
+
+    <script src="../js/createAccountCandidate.js"></script>
 
 </body>
 </html>

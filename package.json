@@ -27,6 +27,8 @@
   },
   "homepage": "https://github.com/cristhianMichalak/jobFinderCreateCRUD#readme",
   "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "sequelize": "^6.37.8",
     "sqlite": "^5.1.1",

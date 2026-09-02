@@ -3,4 +3,4 @@
 node_modules/
 .postman/
 postman/
-
+JWT_SECRET = "K2L4eT5eWdZmxf2G9aPhvffFHmNc3AJu067CEZi7cQX"
